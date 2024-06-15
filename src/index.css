@@ -1,13 +1,328 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: "Playfair Display", serif;
+
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.headercontainer {
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  margin: 1rem;
+  justify-content: space-around;
+}
+
+.logoContainer {
+  display: flex;
+
+  align-items: center;
+  position: relative;
+  justify-content: space-between;
+  gap: 4px;
+}
+
+.logoContainer .logo-icon {
+  height: 2rem;
+  width: 2rem;
+  background-color: purple;
+  border-radius: 50%;
+}
+
+.logoContainer .logo-icon::after {
+  content: "X";
+  position: absolute;
+  top: 0.4rem;
+  left: 0.7rem;
+  color: white;
+}
+
+.logoContainer .logo-text {
+  font-weight: 900;
+  font-size: 1.2rem;
+}
+
+.headercontainer .routes {
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+}
+
+.btn {
+  padding: 8px;
+  border-radius: 8px; /* Change percentage value to pixels */
+  background-color: purple;
+  color: white;
+  border: none;
+  font-size: 0.8rem;
+}
+
+.btn-hero {
+  font-size: 1.2rem;
+}
+
+.btn-container {
+  display: inline-block;
+}
+
+.routes a {
+  text-decoration: none;
+}
+
+.headercontainer a {
+  text-decoration: none;
+}
+
+/* hero */
+
+.hero {
+  margin-top: 5rem;
+  margin-left: 20px;
+  margin-right: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+  overflow-y: hidden;
+  z-index: 10;
+  position: relative;
+  z-index: 1;
+}
+
+.hero .h1 {
+  font-weight: 900;
+  font-size: 4rem;
+  max-width: 40rem;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  word-wrap: break-word;
+}
+
+.hero .h2 {
+  font-weight: 500;
+  text-align: center;
+}
+
+/* Main page */
+
+.taskInputBox {
+  display: flex;
+  background-color: white;
+
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 35rem;
+  width: 100%;
+  margin-top: 3rem;
+
+  border: 10px solid rgb(209, 198, 198);
+  border-radius: 12px;
+  padding: 20px;
+  z-index: 2;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 3rem;
+  box-shadow: 10px 10px 116px -1px rgba(0, 0, 0, 0.29);
+  -webkit-box-shadow: 10px 10px 116px -1px rgba(0, 0, 0, 0.29);
+  -moz-box-shadow: 10px 10px 116px -1px rgba(0, 0, 0, 0.29);
+}
+
+.hidden {
+  display: none;
+}
+.datetime {
+  font-size: medium;
+  display: flex;
+  gap: 10px;
+}
+
+.taskList {
+  position: relative;
+  margin-top: 5rem;
+}
+
+@media only screen and (max-width: 600px) {
+  .taskInputBox {
+    max-width: 50rem;
+  }
+  .card {
+    max-width: 300px;
+    margin-left: 4rem;
+    margin-right: 4rem;
+    width: 100%;
+  }
+}
+
+.taskInput {
+  border: none;
+  outline: none;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+}
+.card-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+}
+.card {
+  border: 1px solid purple;
+  max-width: 600px;
+  margin-bottom: 15px;
+  width: 100%;
+  margin-left: 20px;
+  margin-right: 20px;
+  border-radius: 12px;
+}
+.taskCompleted {
+  text-decoration: line-through;
+}
+
+.card .taskInput {
+  font-weight: 500;
+  padding: 0.4rem;
+  width: 100%;
+  color: rgb(207, 123, 207);
+}
+.number {
+  display: hidden;
+}
+.card .description {
+  width: 100%;
+  padding-left: 0.8;
+}
+
+.description {
+  border: none;
+  outline: none;
+}
+
+.btn-main {
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+}
+
+.btn-main-data {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  padding: 4px;
+  border: 2px solid gray;
+}
+
+.card-heading {
+  display: flex;
+}
+.cursor {
+  cursor: pointer;
+}
+
+.card-dateandtime {
+  display: flex;
+  flex-direction: column;
+  margin-right: 10px;
+
+  text-wrap: nowrap;
+}
+
+.checkbox {
+  transform: scale(2); /* Increase the size of the checkbox */
+}
+
+.card-last {
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 10px;
+}
+
+.purple {
+  width: 20px;
+}
+
+.btn-del {
+  background: rgba(151, 16, 16, 0.691);
+}
+.overlay {
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  opacity: 0.5;
+  z-index: 10; /* Ensure this is lower than opencard */
+  position: fixed;
+  top: 0;
+}
+
+.opencard {
+  max-width: 500px;
+  width: 90%;
+
+  height: 500px;
+  position: absolute;
+
+  z-index: 20;
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+
+  /* Centering */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.tasknameopen {
+  display: flex;
+  flex-direction: column;
+}
+.taskdescopen {
+  display: flex;
+  flex-direction: column;
+}
+
+.taskareadiv1 {
+  border: 2px solid purple;
+  height: 100px;
+  padding: 10px;
+}
+.taskareadiv2 {
+  border: 2px solid purple;
+  height: 300px;
+  padding: 10px;
+}
+
+.overlay {
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  opacity: 0.5;
+  z-index: 1;
+  position: fixed;
+  top: 0;
 }
